@@ -1,0 +1,138 @@
+experience:
+  - company: BG Automotive
+    location: Swindon
+    role: Software Developer
+    date_from: 2024-05
+    date_to: Present
+    points: 
+      # BG Automotive's well-recognized Warranty site, which gained recognition during a company exhibition. 
+      # - Implemented Cookie-based JWT authentication, permission groups, file serving, automated emails, and ERP integration to manage over 7,500 warranty claims and 10,000 GBP worth of products.
+
+      
+      - Implemented stateless, secure authentication using JWTs stored in HTTP-only cookies, with access and refresh token rotation for session management.
+      # Stateless: JWT
+      # Secure: HTTP only, Samesite Lax|Strict, Secure, HTTPonly (no javascript access, requests only)
+      # Session management: access + refresh tokens
+      #
+      # The JWT is just base64 encoded string
+      # Try this experiment:
+      #   - echo "$JWT" | awk -F. '{ print $1 $2 $3 }' | base64 -d | jq '.''
+      # BGA warranty system: 
+      #   - Authentication with JWTs, but no refresh tokens = frequent relogin OR login time is long + unbreakable
+      #   - All JWTs were sent along with requests as 'Bearer token' headers (difficult implementation for every endpoint)
+      #   - Cookies are just a mechanism to store a string, and that string being stored is a JWT
+      # CSRF
+      #   - local storage can just be accessed by any site
+      #   - Samesite: None = Malicious website "evil.com" could have <img src="store.bga"> to force browser to send a request
+      #   - Cookies (The SameSite header: Lax/Strict) solve CSRF (same domain only)
+
+      - Implemented HTTP middleware using Redis as an intermediary cache layer, Server-Sent Events, and frontend Virtualization/Windowing to handle payloads 600 times larger, 400 times faster.
+      # Middleware: intercepts requests and/or responses to apply something to them before reaching the handler
+      # Redis = 400 times faster
+      #   - 45s average -> 0.1s with caching
+      #   - expiry date synchronized to 
+      #
+      # Virtualization/Windowing = 600 times larger
+      #   - HTML was trying to render 40,000+ <tr> tags (n tags)
+      #   - using the scrollY binding, made a dynamic slice of data which only renders what's visible
+      #     - Games programming analogy: Frustum culling => don't render things that aren't on screen
+      #   - Using this lazy rendering method we render a constant 50 rows + 2 growing/shrinking empty rows
+      #     - Browser tries to render 2 enormous divs rather than 40,000 rows of the same height
+      #   - Server-Sent events avoid sending a massive chunk of json through the network 
+
+      - Developed a silent background process that monitors key presses and recognizes barcode syntax, triggering image capture from the warehouse CCTV system.
+      # S: Customers were complaining that their orders have been missing items
+      # T: We needed to prove that our warehouse employees were scanning the items and putting them in the box, 
+      #   the fault is in our delivery couriers, not us.
+      # A: 
+      #   - barcode scanner = keyboard input, scanning = type all the characters really fast
+      #   - intercept warehouse employees with keylogger, use regex to extract barcodes (products|picks)
+      #   - When a barcode is recognized snap a picture
+      #
+      # Q: We can't store the entire video feed, too much storage requirement
+      # A: only capture images when barcode gets scanned, remove images after 6 month retention period 
+      #
+      # Q: the barcode might be blurred on that frame, we have a pic, not clear enough 
+      # A: make the camera burst fire (0.3s interval)
+      #   - multiple consecutive scans = interleaving
+      #   - Used asynchronous rust tasks (greenthreads)
+      #   - Minor detail: keylogger is sync thread, images are async thread. Used message passing between threads
+      #
+      # Q: Windows/Employees could just close our program unexpectedly / Might not run on startup
+      # A: Rather than configuring windows to start the program with WMS, Disguised the program to look like the WMS like a program wrapper, employees had no choice but to run the program alongside it
+      # 
+      # Q: what about mobile scanners
+      # A: Raspberry pi implementation in bash, listen to dev input events with evtest utility, 
+      # Uses raspberry pi camera not cctv camera, systemd services + fstab to connect to shared drive on system startup
+      #
+      # R: Misfire ratio went from 19% to 2%, 
+      # Saved 100k GBP worth of reimbursements
+
+      - Applied systems programming concepts, including mutex-based synchronization, to prevent race conditions and manage concurrent write operations.
+      # Warehouse assigns a maximum number of people (N) to an order 
+      # Develop an application which where only (N) employee(s) can interact with an order at once
+      #   - Implemented a semaphore, gets released when the user exits the program
+      #   - Code can't run after application is closed though
+      #   - Loop writes to a shared storage the current timestamp + 30s (AKA: locked_until timestamp) = loop ends when application closes, releasing lock/semaphore
+
+      - Used cron, the GNU coreutils, and git to create an automated deployment pipeline for various automated services.
+      # I introduced cronjobs to my team when I joined the company. Became our primary scheduling mechanism for automated tasks
+      # Q: storing te source code of the auotmations quickly consumed the space on our 
+      # A: 
+      # 
+      #
+      # Created a script which would parse the user's crontab file for all automations, updating them when the git commit hash is different between local and remote
+
+
+      
+      - Deployed 10 cloud-hosted, containerized applications optimized for performance and minimal memory consumption, achieving reliable operation on the cheapest infrastructure tier.
+
+  - company: British Royal Literature and Science Institution
+    location: Bath
+    role: Volunteer Data Assistant
+    date_from: 2024-03
+    date_to: 2024-05
+    points: 
+      - Used GNU coreutils such as awk and sed to process and clean existing tabular data
+      - Xlsxwriter C library to interact with data in spreadsheet format 
+
+projects:
+  - title: HTTP Redis Caching Middleware
+    url: https://github.com/johanyim/tower-redis-middleware
+    description: A rust library for flexible http response caching | response caching layer
+    points:
+      - Implements a module for response caching, which can be used in a variety of related projects
+      - Implements a module for response caching, which can be used in a variety of related projects
+      - Implements a module for response caching, which can be used in a variety of related projects
+
+skills: 
+  - Rust
+  - Bash
+  - Redis
+
+education:
+  - title: Computer Science MComp (Hons)
+    subtitle: Master of Computing, University of Bath
+    result: 'Degree Class awarded: 2:1'
+    subjects:
+      - Functional Programing (82%)
+      - Machine Learning (77%)
+      - Statistics for Data Science (73%)
+      - Cryptography (78%)
+      - Data Structures and Algorithms (82%)
+      - Computer Systems Architecture (82%)
+  - title: International Baccalaureate (IB)
+    subtitle: ""
+    result: 39 points overall
+    subjects: 
+      - HL Maths (7)
+      - HL Physics (7)
+      - HL Computing (5)
+
+
+
+# JWT, Redis Caching, http middleware, SSEs, 
+# Authentication, 
+# Automation pipelines, Bash Scripting, Text processing with awk and sed, networking dhcp, raspberry pi, synchronization, 
+# combined CCTV with keylogger 
+
