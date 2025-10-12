@@ -1,4 +1,4 @@
-# Johan Yim, Software Developer
+# **Johan Yim** - Software Developer
 - [johanyim.com](https://johanyim.com)
 - [johanjyyim@gmail.com](mailto://johanjyyim@gmail.com)
 - [+44 7510787854](tel:07510787854)
