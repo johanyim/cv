@@ -1,9 +1,19 @@
 #let info = yaml("cv.yaml");
-#let column_widths = (1.2cm, auto)
+#let column_widths = (1.3cm, auto)
+#import "@preview/cmarker:0.1.6"
 
 #set text(size: 12pt)
 #set page(margin: 2em)
-#set list(spacing: 1.0em)
+
+
+#let date = (date_from, date_to) => {
+  text(fill: luma(128))[#raw(date_from) \
+    #raw(date_to)]
+}
+
+#let listof = items => for item in items {
+  cmarker.render("- " + item)
+}
 
 #let section = title => box(inset: (top: 1em))[
   #grid(
@@ -21,12 +31,12 @@
 
 // Header
 #grid(
+  inset: (bottom: -0.5cm),
   columns: 2,
   column-gutter: 1fr,
   box()[
-    #text(size: 2.0em, weight: "bold")[Johan Yim]
-    #h(0.3em)
-    #text(size: 1.6em, fill: luma(128))[Software Developer]
+    #text(size: 2.5em, weight: "bold")[Johan Yim]\
+    #text(size: 1.5em, fill: luma(128))[Software Developer]
   ],
 )
 
@@ -34,22 +44,22 @@
 #place(
   top + right,
   box(
-    outset: (y: 40cm),
     grid(
       columns: 2,
       align: horizon + left,
-      column-gutter: 10pt,
+      column-gutter: 5pt,
       row-gutter: 5pt,
-      link("https://johanyim.com")[󰇧#h(4pt) johanyim.com],
-      link("mailto:johanjyyim@gmail.com")[󰇮#h(4pt) johanjyyim\@gmail.com],
+      link("https://johanyim.com")[󰇧#h(4pt) #raw("johanyim.com")],
+      link("mailto:johanjyyim@gmail.com")[󰇮#h(4pt) #raw("johanjyyim@gmail.com")],
 
-      link("tel:+447510787854")[#h(4pt) +44 7510787854],
-      link("https://linkedin.com/in/johanjyyim/")[#h(4pt) linkedin.com/in/johanjyyim],
+      link("tel:+447510787854")[#h(4pt) #raw("+44 7510787854")],
+      link("https://linkedin.com/in/johanjyyim/")[#h(4pt) #raw("linkedin.com/in/johanjyyim")],
 
-      [], link("https://github.com/johanyim")[#h(4pt) github.com/johanyim],
+      [], link("https://github.com/johanyim")[#h(4pt) #raw("github.com/johanyim")],
     ),
   ),
 )
+
 
 #section("Experience")
 #grid(
@@ -58,16 +68,11 @@
   row-gutter: 20pt,
   ..for (company, location, date_from, date_to, role, points) in info.experience {
     (
-      [#date_from \
-        #date_to],
+      date(date_from, date_to),
       [
-
         #text()[= #role #text(size: 12pt, weight: "semibold", fill: luma(128), company)]
-        #for point in points {
-          text()[
-            - #point
-          ]
-        }],
+        #listof(points)
+      ],
     )
   }
 )
@@ -78,17 +83,16 @@
   columns: column_widths,
   column-gutter: 10pt,
   row-gutter: 20pt,
-  ..for (title, url, description, points) in info.projects {
+  ..for (title, url, display_url, description, points, date_from, date_to) in info.projects {
     (
-      [ lakdsj ],
+      date(date_from, date_to),
       [
 
-        #text()[= #title #text(size: 12pt, weight: "semibold", fill: luma(128), url)]
-        #for point in points {
-          text()[
-            - #point
-          ]
-        }],
+        #text()[= #title #text(size: 12pt, weight: "thin", fill: luma(128), link(
+          url,
+        )[ #raw(display_url)])]
+        #listof(points)
+      ],
     )
   }
 )
@@ -100,19 +104,23 @@
   columns: column_widths,
   column-gutter: 10pt,
   row-gutter: 20pt,
-  ..for (title, subtitle, subjects) in info.education {
+  ..for (title, subtitle, subjects, date_from, date_to) in info.education {
     (
-      [ lakdsj ],
+      date(date_from, date_to),
       [
         #text()[= #title #text(size: 12pt, weight: "semibold", fill: luma(128), subtitle)]
-        #for subject in subjects {
-          text()[
-            - #subject
-          ]
-        }],
+        #subjects.join(" - ")
+      ],
     )
   }
 )
 
-
-
+// #section("Skills")
+// #grid(
+//   columns: column_widths,
+//   column-gutter: 10pt,
+//   row-gutter: 20pt,
+//   text(fill: luma(128))[],
+//   info.skills.map(skill => raw(skill)).join(", ")
+// )
+//
