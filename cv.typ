@@ -83,9 +83,9 @@
   columns: column_widths,
   column-gutter: 10pt,
   row-gutter: 20pt,
-  ..for (title, url, display_url, description, points, date_from, date_to) in info.projects {
+  ..for (title, url, display_url, description, points) in info.projects {
     (
-      date(date_from, date_to),
+      [],
       [
 
         #text()[= #title #text(size: 12pt, weight: "thin", fill: luma(128), link(

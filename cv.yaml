@@ -135,8 +135,6 @@ experience:
 
 projects:
   - title: HTTP Redis Caching Middleware
-    date_from: 2025-04
-    date_to: ''
     url: https://github.com/johanyim/tower-redis-middleware
     display_url: johanyim/tower-redis-middleware
     description: A rust library for flexible http response caching | response caching layer
@@ -164,7 +162,7 @@ education:
   - title: International Baccalaureate (IB)
     date_from: 2017-09
     date_to: 2019-05
-    subtitle: ""
+    subtitle: King George V School, Hong Kong
     result: 39 points overall
     subjects: 
       - HL Maths (7)
