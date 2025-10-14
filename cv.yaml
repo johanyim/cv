@@ -134,9 +134,20 @@ experience:
       # vba macro had to be extracted from an existing xlsm file, and then fed into the new sheet
 
 projects:
-  - title: HTTP Redis Caching Middleware
-    url: https://github.com/johanyim/tower-redis-middleware
-    display_url: johanyim/tower-redis-middleware
+  # - title: HTTP Redis Caching Middleware
+  #   url: https://github.com/johanyim/tower-redis-middleware
+  #   display_url: johanyim/tower-redis-middleware
+  #   description: A rust library for flexible http response caching | response caching layer
+  #   points:
+  #     # public caching, not private
+  #     - Implements a module for response caching, which can be used in a variety of related projects
+  #     - Intermediary between application and data repository such as an SQL Database
+  #     - Practiced writing Documentation 
+  #     - Practiced writing tests
+  #     - Implements a module for response caching, which can be used in a variety of related projects
+  - title: Structure Preserving Encryption and Decryption
+    url: https://github.com/johanyim/spead
+    display_url: johanyim/spead
     description: A rust library for flexible http response caching | response caching layer
     points:
       # public caching, not private
