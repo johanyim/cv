@@ -15,11 +15,11 @@
 - Deployed 10 containerized cloud applications optimized for resource efficiency, achieving reliable operation on a single low-tier cloud instance.
 ### Volunteer Data Assistant - *Bath Royal Literary and Scientific Institution*
 > `2024-03` - `2024-05`
-- Used text-manipulation tools from the GNU coreutils such as `awk` and `sed` to process and clean existing tabular data
-- Interfaced with the `xlsxwriter` C library to programmatically generate non-trivial excel spreadsheets, such as spawning charts and extracting/including VBA macros
+- Used text-manipulation tools from the GNU coreutils such as `awk` and `sed` to process and clean existing tabular data.
+- Interfaced with the `xlsxwriter` C library to programmatically generate non-trivial excel spreadsheets, such as spawning charts and extracting/including VBA macros.
 ## Projects
 ### Structure Preserving Encryption and Decryption - *https://github.com/johanyim/spead*
-- Practiced writing comprehensive manual pages `man` and command line flag validation.
+- Practiced writing comprehensive manual pages `man` and command line flag validation using the `clap` crate.
 - Intermediary between application and data repository such as an SQL Database
 - Practiced writing Documentation
 - Practiced writing tests
