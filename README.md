@@ -8,7 +8,7 @@
 ### Software Developer - *BG Automotive*
 > `2024-05` - `Present`
 - Implemented stateless, secure authentication using `JWT`s stored in HTTP-only cookies, with access and refresh token rotation for session management.
-- Implemented HTTP middleware using `Redis` as an intermediary cache layer, Server-Sent Events, and frontend Virtualization/Windowing to handle payloads 600 times larger, 400 times faster.
+- Implemented HTTP middleware in `Rust` using `Redis` as an intermediary cache layer, Server-Sent Events, and frontend Virtualization/Windowing to handle payloads 600 times larger.
 - Developed a silent background process that monitors key presses and recognizes barcode syntax, triggering image capture from the warehouse CCTV system.
 - Applied systems programming concepts, including mutex-based synchronization, to prevent race conditions and manage concurrent write operations.
 - Used `cron`, the GNU coreutils, and `git` to create an automated deployment pipeline for various automated services.
@@ -19,7 +19,7 @@
 - Interfaced with the `xlsxwriter` C library to programmatically generate non-trivial excel spreadsheets, such as spawning charts and extracting/including VBA macros
 ## Projects
 ### Structure Preserving Encryption and Decryption - *https://github.com/johanyim/spead*
-- Implements a module for response caching, which can be used in a variety of related projects
+- Practiced writing comprehensive manual pages `man` and command line flag validation.
 - Intermediary between application and data repository such as an SQL Database
 - Practiced writing Documentation
 - Practiced writing tests
