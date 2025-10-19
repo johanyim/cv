@@ -150,11 +150,11 @@ projects:
     display_url: johanyim/spead
     description: A command-line tool designed to securely encrypt structured files using various symmetric key encryption algorithms, ensuring schema preservation for consistent data structure post-decryption.
     points:
-      - Improved developer experience by enforcing command-line flag validation to prevent misuse.
+      - Improved user experience by enforcing command-line flag validation to prevent misuse.
       - Distributed CPU-bound parallel workloads to several threads to reduce the amount of time taken to encrypt and decrypt.
       # - Practiced writing 
       # - Practiced writing tests
-      - Measured the performance using benchmarks using the criterion crate
+      - Measured the performance using benchmarks using the criterion crate writing performance tests
       - Implements a module for response caching, which can be used in a variety of related projects
 
 education:
@@ -166,11 +166,11 @@ education:
     subjects:
       - Functional Programming (82%)
       - Machine Learning (77%)
-      # - Statistics for Data Science (73%)
+      - Statistics for Data Science (73%)
       - Cryptography (78%)
       - Data Structures and Algorithms (82%)
       - Computer Systems Architecture (82%)
-  - title: International Baccalaureate (IB)
+  - title: International Baccalaureate (iB)
     date_from: 2017-09
     date_to: 2019-05
     subtitle: King George V School

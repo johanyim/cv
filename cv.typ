@@ -2,7 +2,7 @@
 #let column_widths = (1.3cm, auto)
 #import "@preview/cmarker:0.1.6"
 
-#set text(size: 12pt, font: "Roboto")
+#set text(size: 11pt, font: "Roboto")
 // #set text(size: 12pt)
 #set page(margin: 2em)
 
@@ -16,11 +16,11 @@
   cmarker.render("- " + item)
 }
 
-#let section = title => box(inset: (top: 1em))[
+#let section = title => box(inset: (top: 0.5em))[
   #grid(
     columns: (auto, 1fr),
     align: center + horizon,
-    column-gutter: 6pt,
+    column-gutter: 0.5em,
     [= #title],
     line(
       length: 100%,
@@ -32,9 +32,8 @@
 
 // Header
 #grid(
-  inset: (bottom: -0.5cm),
+  inset: (bottom: -0.4cm),
   columns: 2,
-  column-gutter: 1fr,
   box()[
     #text(size: 2.5em, weight: "bold")[Johan Yim]\
     #text(size: 1.5em, fill: luma(128))[Software Developer]
@@ -104,13 +103,13 @@
 #grid(
   columns: column_widths,
   column-gutter: 10pt,
-  row-gutter: 20pt,
+  row-gutter: 1em,
   ..for (title, subtitle, subjects, result, date_from, date_to) in info.education {
     (
       date(date_from, date_to),
       [
         #text()[= #title #text(size: 12pt, weight: "semibold", fill: luma(128), subtitle)]
-        #result
+        #result -
         #text(fill: luma(128), subjects.join(" - "))
       ],
     )
