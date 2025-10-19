@@ -18,6 +18,10 @@
 - Used text-manipulation tools from the GNU coreutils such as `awk` and `sed` to process and clean existing tabular data.
 - Interfaced with the `xlsxwriter` C library to programmatically generate non-trivial excel spreadsheets, such as spawning charts and extracting/including VBA macros.
 ## Projects
+### HTTP Redis Caching Middleware - *https://github.com/johanyim/tower-redis-middleware*
+- Implements a module for response caching, which can be used in a variety of related projects
+- Intermediary between application and data repository such as an SQL Database
+- Implements a module for response caching, which can be used in a variety of related projects
 ### Structure-Preserving Encryption and Decryption - *https://github.com/johanyim/spead*
 - Improved user experience by enforcing command-line flag validation to prevent misuse.
 - Distributed CPU-bound parallel workloads to several threads to reduce the amount of time taken to encrypt and decrypt.
