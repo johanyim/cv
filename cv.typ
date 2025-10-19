@@ -2,7 +2,8 @@
 #let column_widths = (1.3cm, auto)
 #import "@preview/cmarker:0.1.6"
 
-#set text(size: 12pt)
+#set text(size: 12pt, font: "Roboto")
+// #set text(size: 12pt)
 #set page(margin: 2em)
 
 
@@ -104,12 +105,13 @@
   columns: column_widths,
   column-gutter: 10pt,
   row-gutter: 20pt,
-  ..for (title, subtitle, subjects, date_from, date_to) in info.education {
+  ..for (title, subtitle, subjects, result, date_from, date_to) in info.education {
     (
       date(date_from, date_to),
       [
         #text()[= #title #text(size: 12pt, weight: "semibold", fill: luma(128), subtitle)]
-        #subjects.join(" - ")
+        #result
+        #text(fill: luma(128), subjects.join(" - "))
       ],
     )
   }

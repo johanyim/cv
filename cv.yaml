@@ -145,34 +145,35 @@ projects:
   #     - Practiced writing Documentation 
   #     - Practiced writing tests
   #     - Implements a module for response caching, which can be used in a variety of related projects
-  - title: Structure Preserving Encryption and Decryption
+  - title: Structure-Preserving Encryption and Decryption
     url: https://github.com/johanyim/spead
     display_url: johanyim/spead
-    description: A CLI tool which encrypts files using a choice of symmetric key encryption methods, preserving their structure
+    description: A command-line tool designed to securely encrypt structured files using various symmetric key encryption algorithms, ensuring schema preservation for consistent data structure post-decryption.
     points:
-      - Practiced writing comprehensive manual pages `man` and command line flag validation using the `clap` crate.
-      - Intermediary between application and data repository such as an SQL Database
-      - Practiced writing Documentation 
-      - Practiced writing tests
+      - Improved developer experience by enforcing command-line flag validation to prevent misuse.
+      - Distributed CPU-bound parallel workloads to several threads to reduce the amount of time taken to encrypt and decrypt.
+      # - Practiced writing 
+      # - Practiced writing tests
+      - Measured the performance using benchmarks using the criterion crate
       - Implements a module for response caching, which can be used in a variety of related projects
 
 education:
   - title: Computer Science MComp (Hons)
     date_from: 2019-09
     date_to: 2023-05
-    subtitle: Master of Computing, University of Bath
+    subtitle: University of Bath
     result: 'Degree Class awarded: 2:1'
     subjects:
-      - Functional Programing (82%)
+      - Functional Programming (82%)
       - Machine Learning (77%)
-      - Statistics for Data Science (73%)
+      # - Statistics for Data Science (73%)
       - Cryptography (78%)
       - Data Structures and Algorithms (82%)
       - Computer Systems Architecture (82%)
   - title: International Baccalaureate (IB)
     date_from: 2017-09
     date_to: 2019-05
-    subtitle: King George V School, Hong Kong
+    subtitle: King George V School
     result: 39 points overall
     subjects: 
       - HL Maths (7)
