@@ -2,8 +2,7 @@
 #let column_widths = (1.3cm, auto)
 #import "@preview/cmarker:0.1.6"
 
-#set text(size: 11pt, font: "Roboto")
-// #set text(size: 12pt)
+#set text(size: 12pt, font: "Roboto")
 #set page(margin: 2em)
 
 

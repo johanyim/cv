@@ -135,17 +135,17 @@ experience:
 
 projects:
 
-  - title: HTTP Redis Caching Middleware
-    url: https://github.com/johanyim/tower-redis-middleware
-    display_url: johanyim/tower-redis-middleware
-    description: A rust library for flexible http response caching | response caching layer
-    points:
-      # public caching, not private
-      - Implements a module for response caching, which can be used in a variety of related projects
-      - Intermediary between application and data repository such as an SQL Database
-      # - Practiced writing Documentation 
-      # - Practiced writing tests
-      - Implements a module for response caching, which can be used in a variety of related projects
+  # - title: HTTP Redis Caching Middleware
+  #   url: https://github.com/johanyim/tower-redis-middleware
+  #   display_url: johanyim/tower-redis-middleware
+  #   description: A rust library for flexible http response caching | response caching layer
+  #   points:
+  #     # public caching, not private
+  #     - Implements a module for response caching, which can be used in a variety of related projects
+  #     - Intermediary between application and data repository such as an SQL Database
+  #     # - Practiced writing Documentation 
+  #     # - Practiced writing tests
+  #     - Implements a module for response caching, which can be used in a variety of related projects
 
   - title: Structure-Preserving Encryption and Decryption
     url: https://github.com/johanyim/spead
@@ -158,6 +158,7 @@ projects:
       # - Practiced writing tests
       - Measured the performance using benchmarks using the criterion crate writing performance tests
       - Implements a module for response caching, which can be used in a variety of related projects
+      # Key derivation functions (argon2), chacha20
 
 education:
   - title: Computer Science MComp (Hons)
