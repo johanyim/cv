@@ -13,16 +13,15 @@
 - Applied systems programming concepts, including mutex-based synchronization, to prevent race conditions and manage concurrent write operations.
 - Used `cron`, the GNU coreutils, and `git` to create an automated deployment pipeline for various automated services.
 - Deployed 10 containerized cloud applications optimized for resource efficiency, achieving reliable operation on a single low-tier cloud instance.
+- Interfaced with the `xlsxwriter` C library to programmatically generate non-trivial excel spreadsheets, such as spawning charts and extracting/including VBA macros at compile time.
 ### Volunteer Data Assistant - *Bath Royal Literary and Scientific Institution*
 > `2024-03` - `2024-05`
 - Used text-manipulation tools from the GNU coreutils such as `awk` and `sed` to process and clean existing tabular data.
-- Interfaced with the `xlsxwriter` C library to programmatically generate non-trivial excel spreadsheets, such as spawning charts and extracting/including VBA macros.
 ## Projects
 ### Structure-Preserving Encryption and Decryption - *https://github.com/johanyim/spead*
-- Improved user experience by enforcing command-line flag validation to prevent misuse.
-- Distributed CPU-bound parallel workloads to several threads to reduce the amount of time taken to encrypt and decrypt.
-- Measured the performance using benchmarks using the criterion crate writing performance tests
-- Implements a module for response caching, which can be used in a variety of related projects
+- Implemented key derivation with `Argon2` algorithm to derive cryptographically strong keys to mitigate brute-force and GPU-based attacks.
+- Applied Format-Preserving Encryption (FPE) to encrypt and decrypt structured data without altering data formats or types, reducing the effect of encryption on data type validation.
+- Combined concepts from JSON traversal/pointers (RFC 6901) with nonce selection to produce deterministic encryption, while resisting ciphertext-equality attacks.
 ## Education
 ### Computer Science MComp (Hons) - *University of Bath*
 > `2019-09` - `2023-05`

@@ -44,6 +44,8 @@ experience:
       # A: My company has applications which are internally hosted => a CDN would be infeasible because we arent'd istributed 
 
       - Developed a silent background process that monitors key presses and recognizes barcode syntax, triggering image capture from the warehouse CCTV system.
+      # TODO: use the word `daemon`
+      #
       # S: Customers were complaining that their orders have been missing items
       # T: We needed to prove that our warehouse employees were scanning the items and putting them in the box, 
       #   the fault is in our delivery couriers, not us.
@@ -107,6 +109,14 @@ experience:
       # Tradeoff: hot reloading in development was mostly gone
       # 
       # - Learned to confgure DHCP to reserve IP addresses for 
+      
+
+      - Interfaced with the `xlsxwriter` C library to programmatically generate non-trivial excel spreadsheets, such as spawning charts and extracting/including VBA macros at compile time.
+      # Usual task was to parse a large file, and programmatically create an excel file from it, sending it through STMP as an email to a mailing list
+      # This required more than just awk, so rust was used for this task.
+      # 
+      # xlsxwriter cannot modify excel, so had to parse excel, and produce a new excel from it, with all same styling
+      # vba macro had to be extracted from an existing xlsm file, and then fed into the new sheet
 
 
       # - Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL 
@@ -126,13 +136,6 @@ experience:
       #   - initially used sed, but then needed more powerful awk
       #   - regexes with backreferences
 
-      - Interfaced with the `xlsxwriter` C library to programmatically generate non-trivial excel spreadsheets, such as spawning charts and extracting/including VBA macros.
-      # Usual task was to parse a large file, and programmatically create an excel file from it, sending it through STMP as an email to a mailing list
-      # This required more than just awk, so rust was used for this task.
-      # 
-      # xlsxwriter cannot modify excel, so had to parse excel, and produce a new excel from it, with all same styling
-      # vba macro had to be extracted from an existing xlsm file, and then fed into the new sheet
-
 projects:
 
   # - title: HTTP Redis Caching Middleware
@@ -150,14 +153,24 @@ projects:
   - title: Structure-Preserving Encryption and Decryption
     url: https://github.com/johanyim/spead
     display_url: johanyim/spead
-    description: A command-line tool designed to securely encrypt structured files using various symmetric key encryption algorithms, ensuring schema preservation for consistent data structure post-decryption.
+    description: A command-line tool designed to securely encrypt structured files using symmetric key encryption, ensuring schema preservation for consistent data structure post-decryption.
     points:
-      - Improved user experience by enforcing command-line flag validation to prevent misuse.
-      - Distributed CPU-bound parallel workloads to several threads to reduce the amount of time taken to encrypt and decrypt.
+      # I wanted to make a way to push secrets like env files to github, without needing to jump through hoops
+      - Implemented key derivation with `Argon2` algorithm to derive cryptographically strong keys to mitigate brute-force and GPU-based attacks.
+      # side channel attacks too
+      - Applied Format-Preserving Encryption (FPE) to encrypt and decrypt structured data without altering data formats or types, reducing the effect of encryption on data type validation.
+      # - Guided development decisions through test-driven development and performance benchmarking to monitor the direction of the project.
+      - Combined concepts from JSON traversal/pointers (RFC 6901) with nonce selection to produce deterministic encryption, while resisting ciphertext-equality attacks.
+      # - Crypto secure because nonce selection
+
+
+      # - Practiced writing performance benchmarks to guide the direction of development
+      # - Improved user experience by enforcing command-line flag validation to prevent misuse.
+      # - Distributed CPU-bound parallel workloads to several threads to reduce the amount of time taken to encrypt and decrypt.
       # - Practiced writing 
       # - Practiced writing tests
-      - Measured the performance using benchmarks using the criterion crate writing performance tests
-      - Implements a module for response caching, which can be used in a variety of related projects
+      # - Measured the performance using benchmarks using the criterion crate writing performance tests
+      # - Implements a module for response caching, which can be used in a variety of related projects
       # Key derivation functions (argon2), chacha20
 
 education:
