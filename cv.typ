@@ -2,8 +2,8 @@
 #let column_widths = (1.3cm, auto)
 #import "@preview/cmarker:0.1.6"
 
-// #set text(size: 12pt, font: "Roboto")
-#set text(size: 11pt, font: "Roboto")
+#set text(size: 12pt, font: "Roboto")
+// #set text(size: 11pt, font: "Roboto")
 #set page(margin: 2em)
 
 
@@ -36,7 +36,7 @@
   columns: 2,
   box()[
     #text(size: 2.5em, weight: "bold")[Johan Yim]\
-    #text(size: 1.5em, fill: luma(128))[Software Developer]
+    #text(size: 1.5em, fill: luma(128))[Software Engineer]
   ],
 )
 
@@ -116,12 +116,12 @@
   }
 )
 
-#section("Skills")
-#grid(
-  columns: column_widths,
-  column-gutter: 10pt,
-  row-gutter: 20pt,
-  text(fill: luma(128))[],
-  info.skills.map(skill => raw(skill)).join(", ")
-)
+// #section("Skills")
+// #grid(
+//   columns: column_widths,
+//   column-gutter: 10pt,
+//   row-gutter: 20pt,
+//   text(fill: luma(128))[],
+//   info.skills.map(skill => raw(skill)).join(", ")
+// )
 

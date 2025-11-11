@@ -5,7 +5,7 @@
 - [linkedin.com/in/johanjyyim](https://linkedin.com/in/johanjyyim/)
 - [github.com/johanyim](https://github.com/johanyim)
 ## Experience
-### Software Developer - *BG Automotive*
+### Software Engineer - *BG Automotive*
 > `2024-05` - `Present`
 - Implemented stateless, secure authentication using `JWT`s stored in HTTP-only cookies, with access and refresh token rotation for session management.
 - Implemented HTTP middleware in `Rust` using `Redis` as an intermediary cache layer, Server-Sent Events, and frontend Virtualization/Windowing to handle payloads 600 times larger.
